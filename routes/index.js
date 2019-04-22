@@ -1,0 +1,28 @@
+const View = require('./view')
+const Common = require('./common')
+const Users = require('./users')
+const Banner = require('./banner')
+const Music = require('./music')
+const BlogType = require('./blogType')
+const Blog = require('./blog')
+const HotSwiper = require('./hotSwiper')
+const MusicSheet = require('./musicSheet')
+const Comment = require('./comment')
+const Book = require('./book')
+const commentUser = require('./commentUser')
+
+
+module.exports = (app) => {
+    app.use(View.routes()).use(View.allowedMethods())
+    app.use(Users.routes()).use(Users.allowedMethods())
+    app.use(Common.routes()).use(Common.allowedMethods())
+    app.use(Banner.routes()).use(Banner.allowedMethods())
+    app.use(Music.routes()).use(Music.allowedMethods())
+    app.use(BlogType.routes()).use(BlogType.allowedMethods())
+    app.use(Blog.routes()).use(Blog.allowedMethods())
+    app.use(HotSwiper.routes()).use(HotSwiper.allowedMethods())
+    app.use(MusicSheet.routes()).use(MusicSheet.allowedMethods())
+    app.use(Comment.routes()).use(Comment.allowedMethods())
+    app.use(Book.routes()).use(Book.allowedMethods())
+    app.use(commentUser.routes()).use(commentUser.allowedMethods())
+}
